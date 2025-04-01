@@ -1,0 +1,46 @@
+<launch>
+    <!-- Khởi động Gazebo -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find gk_ros)/worlds/empty.world"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="true"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+      
+
+
+     <node
+      name="tf_odom_base"
+      pkg="tf"
+      type="static_transform_publisher"
+      args="0 0 0 0 0 0 odom base_foot_print 50" />
+
+
+     <node
+      name="tf_footprint_base"
+      pkg="tf"
+      type="static_transform_publisher"
+      args="0 0 0 0 0 0 base_foot_print base_link 40" />
+
+    <!-- Load mô tả robot -->
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find gk_ros)/urdf/gk_ros.urdf'" />
+
+    <!-- Spawn robot vào Gazebo -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
+          args="-urdf -model omni -param robot_description"/>
+
+    <!-- Tải thông số wheels -->
+    <rosparam command="load" file="$(find gk_ros)/config/controller.yaml" />
+    <!-- Khởi động bộ điều khiển -->
+    <node
+        name="wheel_controller_spawner"
+        pkg="controller_manager"
+        type="spawner"
+        args="joint_state_controller left_wheel_joint_velocity_controller right_wheel_joint_velocity_controller front_wheel_joint_velocity_controller" />
+        
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="arm_1_joint_controller arm_2_joint_controller" />
+
+</launch>

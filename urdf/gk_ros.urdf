@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="gk_ros">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-6.17023024390706E-06 -0.00105741269224527 0.0870211576509982"
+        rpy="0 0 0" />
+      <mass
+        value="1.34143477505957" />
+      <inertia
+        ixx="0.00439940782903039"
+        ixy="1.39597928220502E-17"
+        ixz="4.34715898494339E-19"
+        iyy="0.00439940782903034"
+        iyz="-7.58941520739852E-19"
+        izz="0.00844608250553473" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="-0.00020783 -0.0067665 -0.022432"
+        rpy="0 0 0" />
+      <mass
+        value="2.3308" />
+      <inertia
+        ixx="0.0009607"
+        ixy="8.0198E-07"
+        ixz="-3.0916E-06"
+        iyy="0.00061492"
+        iyz="-0.00015824"
+        izz="0.0010982" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="0.00011192 -0.0010544 0.097671"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="imu_link">
+    <inertial>
+      <origin
+        xyz="0.00019007 0.0002828 0.00065665"
+        rpy="0 0 0" />
+      <mass
+        value="0.00049163" />
+      <inertia
+        ixx="2.6074E-08"
+        ixy="1.2056E-10"
+        ixz="-1.0304E-10"
+        iyy="1.0522E-08"
+        iyz="-8.6852E-11"
+        izz="3.636E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/imu_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/imu_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="imu_joint"
+    type="fixed">
+    <origin
+      xyz="0.11546 -0.03193 0.16497"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="banhtruoc_link">
+    <inertial>
+      <origin
+        xyz="-5.487E-06 1.8041E-15 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.037821" />
+      <inertia
+        ixx="5.1981E-06"
+        ixy="-9.7638E-21"
+        ixz="1.3996E-23"
+        iyy="2.8505E-06"
+        iyz="-4.1822E-21"
+        izz="2.8505E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/banhtruoc_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/banhtruoc_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="banhtruoc_joint"
+    type="continuous">
+    <origin
+      xyz="0.16434 -0.0010544 0.018863"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="banhtruoc_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      effort="20"
+      velocity="20" />
+    <dynamics
+      damping="0"
+      friction="0.1" />
+  </joint>
+  <link
+    name="banhtrai_link">
+    <inertial>
+      <origin
+        xyz="-1.6653E-15 -5.487E-06 -2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.037821" />
+      <inertia
+        ixx="2.8505E-06"
+        ixy="-7.4115E-22"
+        ixz="1.3631E-21"
+        iyy="5.1981E-06"
+        iyz="-2.6442E-21"
+        izz="2.8505E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/banhtrai_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/banhtrai_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="banhtrai_joint"
+    type="continuous">
+    <origin
+      xyz="-0.082178 0.14127 0.018863"
+      rpy="0 0 0.5236" />
+    <parent
+      link="base_link" />
+    <child
+      link="banhtrai_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="20"
+      velocity="20" />
+    <dynamics
+      damping="0"
+      friction="0.1" />
+  </joint>
+  <link
+    name="banhphai_link">
+    <inertial>
+      <origin
+        xyz="1.6098E-15 5.487E-06 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.037821" />
+      <inertia
+        ixx="2.8505E-06"
+        ixy="-6.3527E-22"
+        ixz="-3.1388E-21"
+        iyy="5.1981E-06"
+        iyz="-1.0517E-21"
+        izz="2.8505E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/banhphai_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/banhphai_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="banhphai_joint"
+    type="continuous">
+    <origin
+      xyz="-0.082178 -0.14338 0.018863"
+      rpy="0 0 -0.5236" />
+    <parent
+      link="base_link" />
+    <child
+      link="banhphai_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="20"
+      velocity="20" />
+    <dynamics
+      damping="0"
+      friction="0.1" />
+  </joint>
+  <link
+    name="prismatic_link">
+    <inertial>
+      <origin
+        xyz="-4.4976E-05 -4.4976E-05 0.14887"
+        rpy="0 0 0" />
+      <mass
+        value="0.25035" />
+      <inertia
+        ixx="0.00058192"
+        ixy="5.5997E-22"
+        ixz="3.7843E-20"
+        iyy="0.00058037"
+        iyz="1.4569E-19"
+        izz="6.9181E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/prismatic_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/prismatic_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="prismatic_joint"
+    type="prismatic">
+    <origin
+      xyz="0 -0.0010544 0.18497"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="prismatic_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0.1"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="0"
+      friction="1" />
+  </joint>
+  <link
+    name="revolute_link">
+    <inertial>
+      <origin
+        xyz="0.082195 7.612E-15 0.0021657"
+        rpy="0 0 0" />
+      <mass
+        value="0.18218" />
+      <inertia
+        ixx="3.2117E-05"
+        ixy="-3.1662E-18"
+        ixz="-1.3933E-05"
+        iyy="0.00056156"
+        iyz="-1.0763E-19"
+        izz="0.00056054" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/revolute_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://gk_ros/meshes/revolute_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="revolute_joint"
+    type="revolute">
+    <origin
+      xyz="-4.4976E-05 -4.4976E-05 0.24991"
+      rpy="0 0 0" />
+    <parent
+      link="prismatic_link" />
+    <child
+      link="revolute_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="0"
+      effort="10"
+      velocity="1" />
+    <dynamics
+      damping="0"
+      friction="0.1" />
+  </joint>
+    
+   
+
+
+
+   <gazebo>
+  <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
+</gazebo>
+      
+       <gazebo reference="lidar_link">
+   <sensor type="ray" name="lidar_sensor">
+     <pose>0 0 0 0 0 0</pose>
+     <visualize>true</visualize>
+     <update_rate>30</update_rate>
+     <ray>
+    <scan>
+      <horizontal>
+        <samples>720</samples>
+        <resolution>1</resolution>
+        <min_angle>-1.5708</min_angle>
+        <max_angle>1.5708</max_angle>
+      </horizontal>
+    </scan>
+    <range>
+      <min>0.1</min>
+      <max>30.0</max>
+      <resolution>0.01</resolution>
+    </range>
+    <noise>
+      <type>gaussian</type>
+      <mean>0.0</mean>
+      <stddev>0.01</stddev>
+    </noise>
+     </ray>
+     <plugin name="gazebo_ros_laser" filename="libgazebo_ros_laser.so">
+    <topicName>/scan</topicName>
+    <frameName>lidar_link</frameName>
+     </plugin>
+   </sensor>
+    </gazebo>
+      
+      
+   <gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <topic>__default_topic__</topic>
+      <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+        <topicName>imu</topicName>
+        <bodyName>imu_link</bodyName>
+        <updateRateHZ>10.0</updateRateHZ>
+        <gaussianNoise>0.0</gaussianNoise>
+        <xyzOffset>0 0 0</xyzOffset>
+        <rpyOffset>0 0 0</rpyOffset>
+        <frameName>imu_link</frameName>
+        <initialOrientationAsReference>false</initialOrientationAsReference>
+      </plugin>
+      <pose>0 0 0 0 0 0</pose>
+    </sensor>
+  </gazebo>
+
+<transmission name="left_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="banhtrai_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="left_wheel_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="right_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="banhphai_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="right_wheel_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="front_wheel_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="banhtruoc_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_wheel_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+ <transmission name="arm_1_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="prismatic_joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="arm_1_motor">
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="arm_2_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="revolute_joint">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="arm_2_motor">
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>
