@@ -1,5 +1,5 @@
 # chaỵ mô phỏng trên gazebo
-roslaunch gk_ros contro.launch
+roslaunch gk_ros control.launch
 #chay mo phong tren rviz 
 roslaunch gk_ros display.launch
 #điều khiển xe bằng bàn phím 
